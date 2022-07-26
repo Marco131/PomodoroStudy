@@ -81,9 +81,30 @@ main #clock{
 
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 main #clock #leaf{
+    display: none;
+    height: 31px;
+    width: 51px;
+    background-image: url(img/leaf.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*background-color: red;*/
+    animation: circle 6s linear infinite;
+}
+
+@keyframes circle{
+    0%{
+        transform: rotate(-270deg)
+        translate(-115px);
+    }
+
+    100%{
+        transform: rotate(90deg)
+        translate(-115px);
+    }
 }
 
 main #timeDisplay{

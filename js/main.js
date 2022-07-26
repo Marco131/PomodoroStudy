@@ -173,11 +173,14 @@ class WaintingClickState extends State{
     }
     
     onChange(){
-        document.title = "Pomodoro Study"
         isCounting = false;
         isPaused = false;
-        clock.style.backgroundImage = "url(./img/tomato.png)";
+
         ChangeTabIcon("./img/icons/leaf.ico");
+        document.title = "Pomodoro Study"
+        
+        leaf.style.display = "none"
+        clock.style.backgroundImage = "url(./img/tomato.png)";
     }
 }
 
@@ -190,8 +193,11 @@ class CountingState extends State{
         isPaused = false;
         isCounting = true;
         CountTime();
-        clock.style.backgroundImage = "url(./img/tomatoCircle.png)";
+
         ChangeTabIcon("./img/icons/play.ico");
+
+        leaf.style.display = "block"
+        clock.style.backgroundImage = "url(./img/tomatoCircle.png)";
         clickSfx.play();
     }
 }
@@ -203,8 +209,11 @@ class PausedState extends State{
     
     onChange(){
         isPaused = true;
-        clock.style.backgroundImage = "url(./img/tomato.png)";
+
         ChangeTabIcon("./img/icons/pause.ico");
+        
+        leaf.style.display = "none"
+        clock.style.backgroundImage = "url(./img/tomato.png)";
         clickSfx.play();
     }
 }
